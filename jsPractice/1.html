@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+<script type="text/javascript">
+    //时间
+    document.write("<p>时间</p>")
+
+    var d=new Date()
+    var time=d.getHours()
+    if (time<22)
+    {
+        document.write("<b>晚安</b>")
+    }
+    else
+    {
+        document.write("<b>祝您愉快</b>")
+    }
+//随机数
+    document.write("<p>随机数</p>")
+
+    var r=Math.random()
+
+    if (r>0.5)
+    {
+        document.write("<a href='http://www.w3school.com.cn'>学习 Web 开发！</a>")
+    }
+    else
+    {
+        document.write("<a href='http://www.microsoft.com'>访问微软！</a>")
+    }
+function disp_alert() {
+    alert("我是警告框！！")
+}
+
+function show_confirm() {
+    var r=confirm("Press a button!");
+    if (r==true)
+    {
+        alert("You pressed OK!");
+    }
+    else
+    {
+        alert("You pressed Cancle!");
+    }
+}
+
+function disp_promt() {
+    var name=prompt("请输入您的名字","Bill Gates")
+    if (name!=null&& name!="")
+    {
+        document.write("你好！"+name+"，今天过得怎么样？")
+    }
+}
+
+function myFunction(txt) {
+    alert(txt);
+}
+
+    function return_function()
+    {
+        return ("您好，祝您愉快！")
+    }
+    function show_return_Function()
+    {
+       document.write(return_function())
+    }
+</script>
+
+<p>本例演示 If...Else 语句。</p>
+
+<p>如果浏览器时间小于 10，那么会向您问“早安”，否则会向您问候“祝您愉快”。</p>
+<input type="button" onclick="disp_alert()" value="显示警告框" />
+<br/>
+<br/>
+<input type="button" onclick="show_confirm()" value="Show confirm Box" />
+<br/>
+<br/>
+<input type="button" onclick="disp_promt()" value="显示提示框" />
+<br/>
+<br/>
+<form>
+    <input type="button" onclick="myFunction('您好！')" value="调用函数">
+    <input type="button" onclick="show_return_Function()" value="显示函数返回值">
+</form>
+</body>
+</html>
