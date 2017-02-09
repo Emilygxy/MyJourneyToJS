@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html >
+
+<body>
+<h1>我的第一段 JavaScript</h1>
+<p>请输入数字，如果不是数字，浏览器会弹出提示框。</p>
+<input id="demo" type="text">
+<script>
+    function myFunction() {
+        var x=document.getElementById("demo").value;//根据id来定位输入框，获取输入框中的值
+        if (x==""||isNaN(x))
+        {
+            alert("Not Numeric!");
+        }
+    }
+</script>
+<button type="button" onclick="myFunction()">这里</button>
+</body>
+</html>

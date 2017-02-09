@@ -1,0 +1,73 @@
+<span style="background-color: rgb(255,255,255);">
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Three.js チュートリアル１</title>
+    <script src="js/three.js"></script>
+    <style type="text/css">
+        div#canvas-frame{
+            border: none;
+            cursor: pointer;
+            width: 600px;
+            height: 600px;
+            background-color: #EEEEEE;
+        }
+    </style>
+    <script>
+        var renderer;
+        function initThree() {
+            width=document.getElementById("canvas-frame").clientWidth;
+            height=document.getElementById("canvas-frame").clientHeight;
+            renderer=new THREE.WebGLRenderer({antialias:true});
+            renderer.setSize(width,height);
+            document.getElementById("canvas-frame").appendChild(renderer.domElement);
+            renderer.setClearColor(0xFFFFFF,1.0);
+        }
+        var camera;
+        function initCamera() {
+           camera=new THREE.PerspectiveCamera(45,width/height,1,10000);
+            camera.position.x=100;
+            camera.position.y=20;
+            camera.position.z=50;
+            camera.up.x=0;
+            camera.up.y=0;
+            camera.up.z=1;
+            camera.lookAt({x:0,y:0,z:0});
+        }
+        var scence;
+        function initScence() {
+            scence=new THREE.Scene();
+        }
+        var light;
+        function initlight() {
+            light=new THREE.DirectionalLight(0xFF0000,1.0,0);
+            light.position.set(100,100,200);
+            scence.add(light);
+        }
+        var cube;
+        function initObject() {
+            cube=new THREE.Mesh(
+                new THREE.CubeGeometry(50,50,50),
+                new THREE.MeshLambertMaterial({color:0xff0000})
+            );
+            scence.add(cube);
+            cube.position.set(0,0,0);
+        }
+        function threeStart() {
+            initThree();
+            initCamera();
+            initScence();
+            initlight();
+            initObject();
+            renderer.clear();
+            renderer.render(scence,camera);
+        }
+    </script>
+</head>
+<body onload="threeStart();">
+<div id="canvas-frame"></div>
+</body>
+</html>
+    </span>

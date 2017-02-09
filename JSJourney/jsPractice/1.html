@@ -66,6 +66,41 @@ function myFunction(txt) {
     {
        document.write(return_function())
     }
+    document.write("<br/>")
+    for(i=0;i<=5;i++)
+    {
+        document.write("数字是："+i)
+        document.write("<br/>")
+    }
+    //
+    document.write("循环输出数组元素：")
+    document.write("<br/>")
+    var x
+    var mycars=new Array()
+    mycars[0]="宝马"
+    mycars[1]="奔驰"
+    mycars[2]="宾利"
+for(x in mycars)
+{
+    document.write(mycars[x]+"<br/>")
+}
+//检查浏览器版本
+    var browser=navigator.appName
+    var b_version=navigator.appVersion
+    var version=parseFloat(b_version)
+    document.write("<br />")
+    document.write("浏览器名称："+browser)
+    document.write("<br />")
+    document.write("浏览器版本："+version)
+//创建按钮动画
+    function mouseOver()
+    {
+        document.b1.src ="/images/鼠标图0.jpg"
+    }
+    function mouseOut()
+    {
+        document.b1.src ="/images/鼠标图1.jpg"
+    }
 </script>
 
 <p>本例演示 If...Else 语句。</p>
@@ -84,5 +119,9 @@ function myFunction(txt) {
     <input type="button" onclick="myFunction('您好！')" value="调用函数">
     <input type="button" onclick="show_return_Function()" value="显示函数返回值">
 </form>
+
+<a href="0.html" target="_blank">
+    <img border="0" alt="Visit W3School!" src="images/鼠标图0.jpg" name="b1" onmouseover="mouseOver()" onmouseout="mouseOut()" />
+</a>
 </body>
 </html>
